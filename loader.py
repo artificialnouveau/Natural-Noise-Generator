@@ -209,6 +209,6 @@ def decode_extract_and_batch(
 
   # Get tensors
   #iterator = dataset.make_one_shot_iterator()
-  iter_train_infer = tf.data.make_one_shot_iterator(dataset)
+  iter_train_infer = tf.compat.v1.data.make_one_shot_iterator(dataset)
   
   return iterator.get_next()
