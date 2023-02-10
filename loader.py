@@ -163,7 +163,15 @@ def decode_extract_and_batch(
       audio = audio[start:]
 
     # Extract sliceuences
-    audio_slices = tf.contrib.signal.frame(
+#     audio_slices = tf.contrib.signal.frame(
+#         audio,
+#         slice_len,
+#         slice_hop,
+#         pad_end=slice_pad_end,
+#         pad_value=0,
+#         axis=0)
+
+    audio_slices = tf.compat.v1.estimator.signal.frame(
         audio,
         slice_len,
         slice_hop,
